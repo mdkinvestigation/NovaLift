@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaLift Asansör | Profesyonel Asansör Bakım & Onarım</title>
+    <title>NovaLift Asansör | Birkan Yüzer - Profesyonel Asansör Bakım, Onarım ve Teknik Takip</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -18,11 +18,11 @@
         :root {
             --bg-pure: #000000;
             --bg-dark: #0a0a0a;
-            --bg-card: #121212;
+            --bg-card: #141414;
             --primary: #FF0000;
             --primary-hover: #CC0000;
             --text-main: #FFFFFF;
-            --text-muted: #888888;
+            --text-muted: #a0a0a0;
             --accent-glow: rgba(255, 0, 0, 0.15);
         }
 
@@ -34,34 +34,65 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3, .nav-logo {
+        h1, h2, h3, h4, .nav-logo {
             font-family: 'Space Grotesk', sans-serif;
         }
 
+        /* Top Contact Bar */
+        .top-bar {
+            background: #0d0d0d;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 8px 8%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .top-bar-left {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-bar-left a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .top-bar-left a:hover {
+            color: var(--primary);
+        }
+
+        .top-bar-right {
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Main Header */
         header {
-            position: fixed;
+            position: sticky;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(12px);
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 20px 40px;
+            padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .nav-logo {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 700;
             color: var(--text-main);
             text-transform: uppercase;
             letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .nav-logo span {
@@ -90,9 +121,9 @@
 
         .lang-switch {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             background: rgba(255, 255, 255, 0.05);
-            padding: 4px 8px;
+            padding: 4px 6px;
             border-radius: 4px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -114,25 +145,26 @@
             border-radius: 2px;
         }
 
+        /* Hero Section */
         .hero-section {
-            min-height: 100vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
-            padding: 120px 8% 60px 8%;
+            padding: 60px 8%;
             position: relative;
-            background: radial-gradient(circle at 80% 20%, var(--accent-glow), transparent 45%);
+            background: radial-gradient(circle at 80% 30%, var(--accent-glow), transparent 50%);
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 60px;
             align-items: center;
             width: 100%;
         }
 
         .hero-content h1 {
-            font-size: 56px;
+            font-size: 52px;
             font-weight: 700;
             line-height: 1.1;
             margin-bottom: 24px;
@@ -141,14 +173,13 @@
 
         .hero-content h1 span {
             color: var(--primary);
-            display: block;
         }
 
         .hero-content p {
             font-size: 18px;
             color: var(--text-muted);
             margin-bottom: 40px;
-            max-width: 540px;
+            max-width: 580px;
         }
 
         .cta-btn {
@@ -162,7 +193,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
         }
 
         .cta-btn:hover {
@@ -175,34 +206,33 @@
             position: relative;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
         }
 
         .hero-image-wrapper img {
             width: 100%;
             height: auto;
             display: block;
-            filter: grayscale(10%) contrast(110%);
             transition: transform 0.5s;
         }
 
         .hero-image-wrapper:hover img {
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
 
         .experience-badge {
             position: absolute;
             bottom: 20px;
             left: 20px;
-            background: rgba(0,0,0,0.85);
+            background: rgba(0,0,0,0.9);
             border-left: 4px solid var(--primary);
             padding: 12px 20px;
             backdrop-filter: blur(8px);
         }
 
         .experience-badge .num {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 800;
             color: var(--primary);
             display: block;
@@ -213,9 +243,9 @@
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--text-main);
         }
 
+        /* Generic Section Styling */
         section {
             padding: 100px 8%;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -224,24 +254,31 @@
         .section-title {
             font-size: 40px;
             font-weight: 700;
-            margin-bottom: 60px;
+            margin-bottom: 20px;
             position: relative;
-            display: inline-block;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-bottom: 60px;
+            max-width: 700px;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
             left: 0;
-            bottom: -10px;
-            width: 40px;
+            bottom: -8px;
+            width: 50px;
             height: 4px;
             background: var(--primary);
         }
 
+        /* Section 2: Services Grid (Enriched) */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
@@ -250,111 +287,120 @@
             border: 1px solid rgba(255,255,255,0.03);
             padding: 40px 30px;
             border-radius: 8px;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--primary);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s;
+            transition: all 0.3s ease;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(255,0,0,0.2);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
+            border-color: rgba(255,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .service-icon {
-            font-size: 36px;
-            margin-bottom: 24px;
-            display: inline-block;
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
         }
 
         .service-card h3 {
-            font-size: 20px;
-            margin-bottom: 16px;
+            font-size: 22px;
+            margin-bottom: 15px;
         }
 
         .service-card p {
             color: var(--text-muted);
             font-size: 14px;
+            margin-bottom: 15px;
         }
 
-        .about-section {
+        .service-card ul {
+            list-style: none;
+            font-size: 13px;
+            color: var(--text-main);
+        }
+
+        .service-card ul li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-card ul li::before {
+            content: '▪';
+            color: var(--primary);
+        }
+
+        /* Section 3: Technical Focus (Image 1 & Image 2) */
+        .tech-showcase-section {
             background: var(--bg-dark);
         }
 
-        .about-grid {
+        .showcase-block {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            gap: 60px;
             align-items: center;
+            margin-bottom: 80px;
         }
 
-        .about-text h2 {
-            margin-bottom: 30px;
+        .showcase-block.reverse {
+            grid-template-columns: 1fr 1fr;
         }
 
-        .about-text p {
+        .showcase-image-wrapper {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .showcase-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .showcase-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .showcase-text p {
             color: var(--text-muted);
             font-size: 16px;
             margin-bottom: 20px;
         }
 
-        .about-highlight {
-            border-left: 3px solid var(--primary);
-            padding-left: 20px;
-            font-style: italic;
-            color: var(--text-main) !important;
-            font-size: 18px !important;
-            margin: 30px 0 !important;
-        }
-
-        .features-list {
+        .showcase-text ul {
             list-style: none;
-            margin-top: 30px;
         }
 
-        .features-list li {
+        .showcase-text ul li {
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 14px;
+            gap: 10px;
             font-weight: 600;
         }
 
-        .features-list li::before {
+        .showcase-text ul li::before {
             content: '✓';
             color: var(--primary);
-            font-weight: 900;
         }
 
-        .contact-grid {
+        /* Section 4: Pricing & Trust Info */
+        .pricing-grid {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 60px;
         }
 
         .pricing-box {
-            background: linear-gradient(135deg, var(--bg-card) 0%, #1a0202 100%);
+            background: linear-gradient(145deg, var(--bg-card) 0%, #170202 100%);
             border: 1px solid rgba(255, 0, 0, 0.2);
-            padding: 40px;
+            padding: 50px 40px;
             border-radius: 8px;
-            height: fit-content;
         }
 
         .pricing-tag {
@@ -362,7 +408,7 @@
             color: white;
             display: inline-block;
             padding: 4px 12px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
             border-radius: 2px;
@@ -370,29 +416,42 @@
         }
 
         .pricing-box h3 {
-            font-size: 28px;
-            margin-bottom: 10px;
+            font-size: 26px;
+            margin-bottom: 8px;
         }
 
         .pricing-box .price {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 24px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .pricing-box p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
         }
 
         .pricing-box ul {
             list-style: none;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .pricing-box ul li {
-            padding: 10px 0;
+            padding: 12px 0;
             border-bottom: 1px solid rgba(255,255,255,0.05);
-            color: var(--text-muted);
+            color: var(--text-main);
             font-size: 14px;
+            display: flex;
+            justify-content: space-between;
         }
 
+        .pricing-box ul li span {
+            color: var(--text-muted);
+        }
+
+        /* Form */
         .contact-form {
             display: flex;
             flex-direction: column;
@@ -402,34 +461,35 @@
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
         }
 
         .form-group label {
             font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             color: var(--text-muted);
         }
 
         .form-group input, .form-group textarea {
             background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.08);
             padding: 14px;
             color: white;
             font-family: inherit;
             border-radius: 4px;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
         }
 
         .form-group input:focus, .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(255,0,0,0.1);
         }
 
         .submit-btn {
-            background: var(--text-main);
-            color: var(--bg-pure);
+            background: var(--primary);
+            color: white;
             border: none;
             padding: 16px;
             font-weight: 700;
@@ -437,17 +497,17 @@
             letter-spacing: 1px;
             border-radius: 4px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: background 0.3s;
         }
 
         .submit-btn:hover {
-            background: var(--primary);
-            color: var(--text-main);
+            background: var(--primary-hover);
         }
 
+        /* Footer */
         footer {
             padding: 40px 8%;
-            background: var(--bg-pure);
+            background: #050505;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -457,14 +517,14 @@
         }
 
         @media (max-width: 968px) {
-            .hero-grid, .about-grid, .contact-grid {
-                grid-template-columns: 1fr;
+            .hero-grid, .showcase-block, .pricing-grid {
+                grid-template-columns: 1fr !important;
                 gap: 40px;
             }
-            header {
-                padding: 20px;
+            .showcase-block.reverse .showcase-image-order {
+                order: 2;
             }
-            nav {
+            nav, .top-bar {
                 display: none;
             }
         }
@@ -472,13 +532,25 @@
 </head>
 <body>
 
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <span>📧 info@novaliftasansor.com</span>
+            <span>📍 Tűrkiye</span>
+        </div>
+        <div class="top-bar-right">
+            <span>📞 <a href="tel:+905546387043" style="color:var(--primary); text-decoration:none;">+90 554 638 70 43</a> | Birkan Yüzer</span>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
     <header>
         <div class="nav-logo">NovaLift <span>Asansör</span></div>
         <nav>
             <a href="#hero" class="tr-text" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
             <a href="#services" class="tr-text" data-tr="Hizmetlerimiz" data-en="Services">Hizmetlerimiz</a>
-            <a href="#about" class="tr-text" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a>
-            <a href="#contact" class="tr-text" data-tr="İletişim" data-en="Contact">İletişim</a>
+            <a href="#tech-showcase" class="tr-text" data-tr="Teknik Uzmanlık" data-en="Technical Expertise">Teknik Uzmanlık</a>
+            <a href="#pricing" class="tr-text" data-tr="Fiyatlandırma & İletişim" data-en="Pricing & Contact">Fiyatlandırma & İletişim</a>
         </nav>
         <div class="lang-switch">
             <button class="lang-btn active" onclick="switchLanguage('tr')">TR</button>
@@ -490,121 +562,161 @@
     <section id="hero" class="hero-section">
         <div class="hero-grid">
             <div class="hero-content">
-                <h1 id="hero-title">20 Yıllık Gerçek Mekanik Tecrübesiyle <span>Asansörleriniz Güvende</span></h1>
-                <p id="hero-desc">NovaLift Asansör olarak, profesyonel tamir, periyodik bakım ve kusursuz teknik takip hizmeti sunuyoruz. Binanızın kalbini usta ellere emanet edin.</p>
-                <a href="#contact" class="cta-btn" id="hero-btn">Teklif Alın</a>
+                <h1 id="hero-title">Birkan Yüzer ile 20 Yıllık Gerçek <span>Mekanik Ustası Güvencesi</span></h1>
+                <p id="hero-desc">Asansörleriniz sıradan bir makine değil, binalarınızın can damarıdır. NovaLift Asansör kalitesiyle arıza tamiri, profesyonel periyodik bakım ve kusursuz teknik takip hizmeti sunuyoruz.</p>
+                <a href="tel:+905546387043" class="cta-btn" id="hero-btn">7/24 Acil Ara</a>
             </div>
             <div class="hero-image-container">
                 <div class="hero-image-wrapper">
-                    <img src="image_9654e6.jpg" alt="NovaLift Usta Mekanik">
+                    <img src="image_9654e6.jpg" alt="Birkan Yüzer - NovaLift Asansör">
                     <div class="experience-badge">
-                        <span class="num">20+</span>
-                        <span class="text" id="badge-text">Yıllık Deneyim</span>
+                        <span class="num">20 Yıl</span>
+                        <span class="text" id="badge-text">Sektörel Tecrübe</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 2: Hizmetlerimiz (Services) -->
+    <!-- Section 2: Services Grid (Enriched for Sales) -->
     <section id="services">
-        <h2 class="section-title tr-text" data-tr="Hizmetlerimiz" data-en="Our Services">Hizmetlerimiz</h2>
+        <h2 class="section-title tr-text" data-tr="Kapsamlı Hizmetlerimiz" data-en="Our Comprehensive Services">Kapsamlı Hizmetlerimiz</h2>
+        <p class="section-subtitle tr-text" data-tr="En yüksek güvenlik standartlarına sahip mekanik altyapımız ile asansörlerinizin sorunsuz çalışmasını garanti altına alıyoruz." data-en="We guarantee the flawless operation of your elevators with our high-safety standard mechanical infrastructure.">En yüksek güvenlik standartlarına sahip mekanik altyapımız ile asansörlerinizin sorunsuz çalışmasını garanti altına alıyoruz.</p>
+        
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">🔧</div>
-                <h3 class="tr-text" data-tr="Arıza Tamiri" data-en="Emergency Repair">Arıza Tamiri</h3>
-                <p class="tr-text" data-tr="7/24 hızlı müdahale ile asansörlerinizdeki arızaları en kısa sürede profesyonelce gideriyoruz." data-en="With 24/7 rapid response, we professionally eliminate failures in your elevators as quickly as possible.">7/24 hızlı müdahale ile asansörlerinizdeki arızaları en kısa sürede profesyonelce gideriyoruz.</p>
+                <h3 class="tr-text" data-tr="Hızlı Arıza Tamiri" data-en="Rapid Failure Repair">Hızlı Arıza Tamiri</h3>
+                <p class="tr-text" data-tr="Beklenmedik duruşları engellemek için 7/24 hızlı mekanik ve elektronik müdahale sağlıyoruz." data-en="We provide 24/7 rapid mechanical and electronic interventions to prevent unexpected elevator downtime."></p>
+                <ul>
+                    <li class="tr-text" data-tr="Elektronik Kart Onarımı" data-en="Electronic Board Repair">Elektronik Kart Onarımı</li>
+                    <li class="tr-text" data-tr="Motor ve Fren Ayarları" data-en="Motor and Brake Adjustments">Motor ve Fren Ayarları</li>
+                </ul>
             </div>
             <div class="service-card">
                 <div class="service-icon">🛡️</div>
-                <h3 class="tr-text" data-tr="Periyodik Bakım" data-en="Periodic Maintenance">Periyodik Bakım</h3>
-                <p class="tr-text" data-tr="Düzenli ve detaylı bakımlarla asansörlerinizin ömrünü uzatıyor, en üst düzey güvenliği sağlıyoruz." data-en="We extend the life of your elevators and ensure the highest safety standard with regular, detailed maintenance.">Düzenli ve detaylı bakımlarla asansörlerinizin ömrünü uzatıyor, en üst düzey güvenliği sağlıyoruz.</p>
+                <h3 class="tr-text" data-tr="Periyodik Ağır Bakım" data-en="Periodic Heavy Maintenance">Periyodik Ağır Bakım</h3>
+                <p class="tr-text" data-tr="Asansörlerinizin ömrünü uzatmak ve yıpranmaları durdurmak adına detaylı mekanik kontroller gerçekleştiriyoruz." data-en="We perform detailed mechanical checks to extend the service life of your elevators and halt wear."></p>
+                <ul>
+                    <li class="tr-text" data-tr="Kılavuz Ray Yağlamaları" data-en="Guide Rail Lubrication">Kılavuz Ray Yağlamaları</li>
+                    <li class="tr-text" data-tr="Halat Gerginlik Kontrolleri" data-en="Rope Tension Analysis">Halat Gerginlik Kontrolleri</li>
+                </ul>
             </div>
             <div class="service-card">
                 <div class="service-icon">🔍</div>
-                <h3 class="tr-text" data-tr="Teknik Takip" data-en="Technical Tracking">Teknik Takip</h3>
-                <p class="tr-text" data-tr="Modern yöntemlerle asansör performansını izliyor, olası sorunları büyümeden engelliyoruz." data-en="We monitor elevator performance using modern methods, preventing potential problems before they escalate.">Modern yöntemlerle asansör performansını izliyor, olası sorunları büyümeden engelliyoruz.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 3: Neden Biz? (Pourquoi Nous ?) -->
-    <section id="about" class="about-section">
-        <div class="about-grid">
-            <div class="about-text">
-                <h2 class="section-title tr-text" data-tr="Gerçek Bir Mekanik Ustası" data-en="A True Master Mechanic">Gerçek Bir Mekanik Ustası</h2>
-                <p class="tr-text" data-tr="Asansörleriniz sadece bir makine değil, binalarınızın can damarıdır. 20 yılı aşkın süredir her ince mekanik detaya hakim bir ustalıkla çalışıyorum." data-en="Your elevators are not just machines, they are the lifeblood of your buildings. For over 20 years, I have been working with a mastery that commands every fine mechanical detail.">Asansörleriniz sadece bir makine değil, binalarınızın can damarıdır. 20 yılı aşkın süredir her ince mekanik detaya hakim bir ustalıkla çalışıyorum.</p>
-                <p class="about-highlight tr-text" data-tr="Bizim için bakım; sadece yağlama yapmak değil, sorunları önceden öngörmek ve size mutlak güven vermektir." data-en="For us, maintenance is not just oiling; it is predicting issues in advance and giving you absolute peace of mind.">Bizim için bakım; sadece yağlama yapmak değil, sorunları önceden öngörmek ve size mutlak güven vermektir.</p>
-                <ul class="features-list">
-                    <li class="tr-text" data-tr="Ekonomik & Şeffaf Fiyatlandırma" data-en="Affordable & Transparent Pricing">Ekonomik & Şeffaf Fiyatlandırma</li>
-                    <li class="tr-text" data-tr="20 Yıllık Sektör Tecrübesi" data-en="20 Years of Industry Experience">20 Yıllık Sektör Tecrübesi</li>
-                    <li class="tr-text" data-tr="Kusursuz İşçilik Garantisi" data-en="Flawless Workmanship Guarantee">Kusursuz İşçilik Garantisi</li>
-                </ul>
-            </div>
-            <div>
-                <div style="background: radial-gradient(circle, #220101 0%, #050000 100%); border: 1px solid rgba(255,0,0,0.1); padding: 50px; border-radius: 8px; text-align: center;">
-                    <div style="font-size: 72px; color: var(--primary); font-weight: 700;">20</div>
-                    <div style="text-transform: uppercase; letter-spacing: 2px; font-size: 14px; margin-top: 10px;" class="tr-text" data-tr="Yıldır Kesintisiz Güven" data-en="Years of Uninterrupted Trust">Yıldır Kesintisiz Güven</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 4: Fiyatlandırma ve İletişim (Prix & Contact) -->
-    <section id="contact">
-        <h2 class="section-title tr-text" data-tr="Fiyatlandırma & İletişim" data-en="Pricing & Contact">Fiyatlandırma & İletişim</h2>
-        <div class="contact-grid">
-            <div class="pricing-box">
-                <span class="pricing-tag tr-text" data-tr="En Çok Tercih Edilen" data-en="Most Popular">En Çok Tercih Edilen</span>
-                <h3 class="tr-text" data-tr="Profesyonel Bakım Paketi" data-en="Professional Care Pack">Profesyonel Bakım Paketi</h3>
-                <div class="price" id="price-val">Uygun Fiyatlı / Pro</div>
+                <h3 class="tr-text" data-tr="Sürekli Teknik Takip" data-en="Continuous Technical Tracking">Sürekli Teknik Takip</h3>
+                <p class="tr-text" data-tr="Potansiyel riskleri tehlikeye dönüşmeden önce tespit ediyor, binalarınıza güvenlik raporları sunuyoruz." data-en="We detect potential risks before they turn into danger, providing security reports to your buildings."></p>
                 <ul>
-                    <li class="tr-text" data-tr="7/24 Acil Arıza Müdahalesi" data-en="24/7 Emergency Response">7/24 Acil Arıza Müdahalesi</li>
-                    <li class="tr-text" data-tr="Aylık Detaylı Periyodik Kontrol" data-en="Monthly Detailed Periodic Check">Aylık Detaylı Periyodik Kontrol</li>
-                    <li class="tr-text" data-tr="Teknik Takip ve Raporlama" data-en="Technical Tracking & Reporting">Teknik Takip ve Raporlama</li>
-                    <li class="tr-text" data-tr="Orijinal Yedek Parça Desteği" data-en="Original Spare Parts Support">Orijinal Yedek Parça Desteği</li>
+                    <li class="tr-text" data-tr="Kırmızı Etiket Revizyonu" data-en="Red Label Revision Support">Kırmızı Etiket Revizyonu</li>
+                    <li class="tr-text" data-tr="Aylık Güvenlik Raporlaması" data-en="Monthly Safety Reporting">Aylık Güvenlik Raporlaması</li>
                 </ul>
-                <a href="#contact-form" class="cta-btn tr-text" style="display:block; text-align:center;" data-tr="Hemen Başvurun" data-en="Apply Now">Hemen Başvurun</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Technical Focus (Image 1 and Image 2 Showcase) -->
+    <section id="tech-showcase" class="tech-showcase-section">
+        <h2 class="section-title tr-text" data-tr="Teknik ve Tasarım Gücü" data-en="Technical & Design Strength">Teknik ve Tasarım Gücü</h2>
+        <p class="section-subtitle tr-text" data-tr="Mekanik ustalığımızı modern mimari ile birleştirerek hem iç kabin kalitesini hem de arka plandaki mühendisliği mükemmelleştiriyoruz." data-en="By combining our mechanical mastery with modern architecture, we perfect both internal cabin quality and background engineering."></p>
+
+        <!-- Block 1: Image 1 (Cabin Design & Interior Trust) -->
+        <div class="showcase-block">
+            <div class="showcase-image-wrapper">
+                <img src="image1.jpg" alt="Kabin Tasarım ve Yenileme - NovaLift Asansör">
+            </div>
+            <div class="showcase-text">
+                <h3 class="tr-text" data-tr="Kabin Modernizasyonu & Estetik Güven" data-en="Cabin Modernization & Aesthetic Trust">Kabin Modernizasyonu & Estetik Güven</h3>
+                <p class="tr-text" 
+                   data-tr="Asansör kabininin iç mimarisi ve buton panelleri, kullanıcıların güvenliğini ve konforunu doğrudan hissettiği alanlardır. Eski, yıpranmış ve ses yapan kabinlerinizi son teknoloji sessiz süspansiyon sistemleri ve lüks tasarımlarla yeniliyoruz." 
+                   data-en="The interior architecture and button panels of the elevator cabin are spaces where users directly feel safety and comfort. We renovate your old, worn out, noisy cabins with high-tech silent suspension systems and luxury designs.">
+                </p>
+                <ul>
+                    <li class="tr-text" data-tr="Paslanmaz Çelik ve LED Aydınlatma Altyapısı" data-en="Stainless Steel & LED Lighting Infrastructure">Paslanmaz Çelik ve LED Aydınlatma Altyapısı</li>
+                    <li class="tr-text" data-tr="Maksimum Ağırlık Sensörleri ve Acil Durum Kitleri" data-en="Maximum Weight Sensors & Emergency Kits">Maksimum Ağırlık Sensörleri ve Acil Durum Kitleri</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Block 2: Image 2 (Wiring & Mechanical Precision) -->
+        <div class="showcase-block reverse">
+            <div class="showcase-text">
+                <h3 class="tr-text" data-tr="Kusursuz Câblage ve Kusursuz Motor Gücü" data-en="Flawless Wiring & Flawless Motor Power">Kusursuz Câblage ve Kusursuz Motor Gücü</h3>
+                <p class="tr-text" 
+                   data-tr="Bir asansörün gerçek kalbi makine dairesinde ve kuyusunda yatar. 20 yıllık mekanik tecrübemizle, kabloların (câblage), halatların, kasnakların ve hız regülatörlerinin milimetrik ayarlarını gerçekleştirerek aşınmaları sıfıra indiriyoruz." 
+                   data-en="The true heart of an elevator lies within the machine room and the shaft. With our 20 years of mechanical experience, we perform millimeter-precise adjustments of wiring, ropes, pulleys, and speed governors to minimize wear.">
+                </p>
+                <ul>
+                    <li class="tr-text" data-tr="Ağır Hizmet Çelik Halat Değişimi" data-en="Heavy Duty Steel Rope Replacement">Ağır Hizmet Çelik Halat Değişimi</li>
+                    <li class="tr-text" data-tr="Yüksek Gerilim Koruyuculu Pano Kablolaması" data-en="High-Voltage Protected Control Panel Wiring">Yüksek Gerilim Koruyuculu Pano Kablolaması</li>
+                </ul>
+            </div>
+            <div class="showcase-image-wrapper showcase-image-order">
+                <img src="image2.jpg" alt="Mekanik Altyapı ve Kablolama - NovaLift Asansör">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Pricing & Contact Form -->
+    <section id="pricing">
+        <h2 class="section-title tr-text" data-tr="Şeffaf Fiyatlandırma & İletişim Formu" data-en="Transparent Pricing & Contact Form">Şeffaf Fiyatlandırma & İletişim Formu</h2>
+        <p class="section-subtitle tr-text" data-tr="Piyasadaki en rekabetçi ve uygun fiyatlarla (prix adorable) profesyonel işçiliği bir araya getiriyoruz. Güvenliğiniz için teklif alın." data-en="We combine professional workmanship with the most competitive and affordable prices. Get a quote for your safety."></p>
+
+        <div class="pricing-grid">
+            <div class="pricing-box">
+                <span class="pricing-tag tr-text" data-tr="En Popüler Seçenek" data-en="Most Popular Option">En Popüler Seçenek</span>
+                <h3 class="tr-text" data-tr="Komple Bakım & Takip Paketi" data-en="Complete Maintenance & Tracking Pack">Komple Bakım & Takip Paketi</h3>
+                <div class="price" id="price-val">Ekonomik / Pro Fiyat</div>
+                <p class="tr-text" data-tr="Apartmanlar, siteler ve iş merkezleri için özel olarak optimize edilmiş aylık periyodik bakım tarifesi." data-en="Monthly periodic maintenance tariff optimized specifically for apartments, residential complexes, and business centers."></p>
+                <ul>
+                    <li><span class="tr-text" data-tr="7/24 Acil Müdahale" data-en="24/7 Emergency Intervention">7/24 Acil Müdahale</span> <strong>Dahil / Included</strong></li>
+                    <li><span class="tr-text" data-tr="Mekanik Yağlama ve Ayar" data-en="Mechanical Oiling & Tuning">Mekanik Yağlama ve Ayar</span> <strong>Dahil / Included</strong></li>
+                    <li><span class="tr-text" data-tr="Resmi Raporlama Desteği" data-en="Official Reporting Support">Resmi Raporlama Desteği</span> <strong>Dahil / Included</strong></li>
+                </ul>
+                <a href="tel:+905546387043" class="cta-btn" style="display:block; text-align:center;" id="pricing-cta">Birkan Usta'yı Ara</a>
             </div>
 
-            <form id="contact-form" class="contact-form" onsubmit="event.preventDefault(); alert('Mesajınız alındı! / Message received!');">
+            <!-- Contact Form -->
+            <form id="contact-form" class="contact-form" onsubmit="event.preventDefault(); alert('Mesajınız başarıyla Birkan Bey\'e iletildi! / Message successfully sent!');">
                 <div class="form-group">
-                    <label class="tr-text" data-tr="Adınız Soyadınız" data-en="Your Name">Adınız Soyadınız</label>
-                    <input type="text" required>
+                    <label class="tr-text" data-tr="Adınız Soyadınız / Kurum Adı" data-en="Your Name / Company Name">Adınız Soyadınız / Kurum Adı</label>
+                    <input type="text" required placeholder="Örn: Ahmet Yılmaz / Nova Apartmanı">
                 </div>
                 <div class="form-group">
                     <label class="tr-text" data-tr="Telefon Numaranız" data-en="Phone Number">Telefon Numaranız</label>
-                    <input type="tel" required>
+                    <input type="tel" value="+90 " required>
                 </div>
                 <div class="form-group">
-                    <label class="tr-text" data-tr="Mesajınız" data-en="Your Message">Mesajınız</label>
-                    <textarea rows="5" required></textarea>
+                    <label class="tr-text" data-tr="İhtiyacınız Olan Hizmet" data-en="Service Needed">İhtiyacınız Olan Hizmet</label>
+                    <textarea rows="4" required placeholder="Asansörünüzün durumunu kısaca belirtiniz..."></textarea>
                 </div>
-                <button type="submit" class="submit-btn tr-text" data-tr="Gönder" data-en="Send Message">Gönder</button>
+                <button type="submit" class="submit-btn tr-text" data-tr="Fiyat Teklifi İsteyin" data-en="Request Pricing Quote">Fiyat Teklifi İsteyin</button>
             </form>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <div>&copy; 2026 NovaLift Asansör. All rights reserved.</div>
-        <div class="tr-text" data-tr="Profesyonel Asansör Çözümleri" data-en="Professional Elevator Solutions">Profesyonel Asansör Çözümleri</div>
+        <div>&copy; 2026 NovaLift Asansör | Birkan Yüzer. Tüm Hakları Saklıdır.</div>
+        <div class="tr-text" data-tr="20 Yıllık Mekanik Uzmanlık" data-en="20 Years of Mechanical Expertise">20 Yıllık Mekanik Uzmanlık</div>
     </footer>
 
     <script>
         const translations = {
             tr: {
-                heroTitle: "20 Yıllık Gerçek Mekanik Tecrübesiyle <span>Asansörleriniz Güvende</span>",
-                heroDesc: "NovaLift Asansör olarak, profesyonel tamir, periyodik bakım ve kusursuz teknik takip hizmeti sunuyoruz. Binanızın kalbini usta ellere emanet edin.",
-                heroBtn: "Teklif Alın",
-                badgeText: "Yıllık Deneyim",
-                priceVal: "Uygun Fiyatlı / Pro"
+                heroTitle: "Birkan Yüzer ile 20 Yıllık Gerçek <span>Mekanik Ustası Güvencesi</span>",
+                heroDesc: "Asansörleriniz sıradan bir makine değil, binalarınızın can damarıdır. NovaLift Asansör kalitesiyle arıza tamiri, profesyonel periyodik bakım ve kusursuz teknik takip hizmeti sunuyoruz.",
+                heroBtn: "7/24 Acil Ara",
+                badgeText: "Sektörel Tecrübe",
+                priceVal: "Ekonomik / Pro Fiyat",
+                pricingCta: "Birkan Usta'yı Ara"
             },
             en: {
-                heroTitle: "With 20 Years of True Mechanical Expertise <span>Your Elevators Are Safe</span>",
-                heroDesc: "At NovaLift Elevators, we provide professional repair, periodic maintenance, and seamless technical tracking. Entrust the heart of your building to master hands.",
-                heroBtn: "Get a Quote",
-                badgeText: "Years Experience",
-                priceVal: "Affordable / Pro"
+                heroTitle: "20 Years of True <span>Master Mechanic Guarantee</span> with Birkan Yüzer",
+                heroDesc: "Your elevators are not ordinary machines, they are the lifeblood of your buildings. We provide repair, professional periodic maintenance, and seamless technical tracking with NovaLift quality.",
+                heroBtn: "Call 24/7 Emergency",
+                badgeText: "Sector Experience",
+                priceVal: "Affordable / Pro Price",
+                pricingCta: "Call Master Birkan"
             }
         };
 
@@ -617,6 +729,7 @@
             document.getElementById('hero-btn').innerText = translations[lang].heroBtn;
             document.getElementById('badge-text').innerText = translations[lang].badgeText;
             document.getElementById('price-val').innerText = translations[lang].priceVal;
+            document.getElementById('pricing-cta').innerText = translations[lang].pricingCta;
 
             document.querySelectorAll('.tr-text').forEach(el => {
                 const text = el.getAttribute(`data-${lang}`);
